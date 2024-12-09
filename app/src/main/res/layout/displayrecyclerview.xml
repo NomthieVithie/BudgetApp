@@ -16,17 +16,8 @@
         android:layout_height="wrap_content"
         android:text="Back to Main Screen" />
 
-    <Button
-        android:id="@+id/btnAverage"
-        android:layout_width="210dp"
-        android:layout_height="wrap_content"
-        android:text="average" />
 
-    <Button
-        android:id="@+id/btnHighestSpending"
-        android:layout_width="210dp"
-        android:layout_height="wrap_content"
-        android:text="Highest spending"/>
+
 
 
 </LinearLayout>

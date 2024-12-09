@@ -46,4 +46,5 @@ On "Calculate Average" button click:
 
 ![Screenshot (9)](https://github.com/user-attachments/assets/5f90a185-7335-4951-be9b-5e07c064d585)
 ![Screenshot (10)](https://github.com/user-attachments/assets/054882e5-62b2-45fa-9ceb-64ea41a977fe)
-![Screenshot (11)](https://github.com/user-attachments/assets/ad62df04-6115-45b3-8a4d-e5e69b6f3f36)
+![Screenshot 2024-12-09 161433](https://github.com/user-attachments/assets/84787fd8-fd9e-457e-b38b-c0538ec62f69)
+

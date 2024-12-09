@@ -75,6 +75,8 @@ class MainActivity : ComponentActivity() {
             // Display the result in a Toast message
             Toast.makeText(this, "Average money spent: R%.2f".format(average), Toast.LENGTH_LONG).show()
         }
+
+
     }
 
     // Method to calculate the average of the money spent

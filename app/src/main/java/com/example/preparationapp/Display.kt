@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import android.content.Intent
+import android.util.Log
 
 class Display: ComponentActivity() {
 
@@ -21,6 +22,8 @@ class Display: ComponentActivity() {
         val backButton = findViewById<Button>(R.id.btnBack)
         backButton.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+
+
         }
     }
 }

@@ -2,10 +2,10 @@ package com.example.preparationapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import com.example.preparationapp.ui.theme.PreparationAppTheme
@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
         val btnSave = findViewById<Button>(R.id.submitbtn)
         val btnClear = findViewById<Button>(R.id.clearbtn)
         val btnShow = findViewById<Button>(R.id.showdata)
-        val btnAverage = findViewById<Button>(R.id.averagebtn)  // Fix variable name here
+        val btnAverage = findViewById<Button>(R.id.averagebtn)
 
         // when save button is clicked
         btnSave.setOnClickListener {
@@ -66,28 +66,34 @@ class MainActivity : ComponentActivity() {
             startActivity(Intent(this, Display::class.java))
         }
 
-        // Average button functionality
+        // average button functionality
         btnAverage.setOnClickListener {
-            val averageExpenses = calculateAverageExpenses()
-            if (averageExpenses != null) {
-                // Display the average expenses
-                Log.d("MainActivity", "Average expenses per day: $averageExpenses")
-            } else {
-                Log.d("MainActivity", "No expenses data found to calculate average")
-            }
+            val average = calculateAverage()
+            Log.d("MainActivity", "The average money spent is: $average")
+            // Display the result in a Toast message
+            Toast.makeText(this, "Average money spent: R%.2f".format(average), Toast.LENGTH_LONG).show()
         }
     }
 
-    private fun calculateAverageExpenses(): Double? {
-        if (SpendingDate.isEmpty()) {
-            return null
+    // Method to calculate the average of the money spent
+    private fun calculateAverage(): Double {
+        var totalSpent = 0.0
+        var count = 0
+
+        // Loop through the SpendingDate list and sum up the morning and afternoon values
+        for (student in SpendingDate) {
+            try {
+                // Convert the morning and afternoon expenses to doubles
+                val morningSpent = student.morning.toDoubleOrNull() ?: 0.0
+                val afternoonSpent = student.afternoon.toDoubleOrNull() ?: 0.0
+                totalSpent += morningSpent + afternoonSpent
+                count++
+            } catch (e: Exception) {
+                Log.e("MainActivity", "Error parsing expense values: ${e.message}")
+            }
         }
 
-        val totalExpenses = SpendingDate.sumByDouble {
-            it.morning.toDouble() + it.afternoon.toDouble()
-        }
-
-        val averageExpenses = totalExpenses / SpendingDate.size
-        return averageExpenses
+        // Return the average or 0 if there are no records
+        return if (count > 0) totalSpent / count else 0.0
     }
 }

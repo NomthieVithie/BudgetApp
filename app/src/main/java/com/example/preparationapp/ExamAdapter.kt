@@ -7,6 +7,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
+//Nomthandazo Ndlovu st10432979
+
 //// Data class to represent the student information
 data class Student(val date: String,val morning: String, val afternoon: String, val notes:String)
 

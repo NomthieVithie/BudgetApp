@@ -10,4 +10,11 @@
         android:layout_height="wrap_content"
         />
 
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:text="Back to Main Screen" />
+
+
 </LinearLayout>

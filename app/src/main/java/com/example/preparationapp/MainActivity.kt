@@ -54,9 +54,9 @@ class MainActivity : ComponentActivity() {
                 //lets insert the date into the list
                 SpendingDate.add(Student(date, morning, afternoon, notes))
                 tdate.text.clear() //clears input field after a successful save
-                tmorning.text.clear()
-                tafternoon.text.clear()
-                tnotes.text.clear()
+                tmorning.text.clear() //clear the morning textview
+                tafternoon.text.clear()//clear the afternoon textview
+                tnotes.text.clear()//clear the notes textview
 
 
             }
@@ -64,9 +64,10 @@ class MainActivity : ComponentActivity() {
 
         }
         btnClear.setOnClickListener{ //clear button functionality
-            tmark.text.clear()
-            tmodule.text.clear()
             tdate.text.clear()
+            tmorning.text.clear()
+            tafternoon.text.clear()
+            tnotes.text.clear()
     }
 
         btnShow.setOnClickListener {

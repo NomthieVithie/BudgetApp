@@ -12,6 +12,6 @@ class Display: ComponentActivity() {
         setContentView(R.layout.displayrecyclerview) //Set the content view to the recyclerview' layout
         val recyclerView=findViewById<RecyclerView>(R.id.recyclerview)
         recyclerView.layoutManager=LinearLayoutManager(this)
-        recyclerView.adapter = ExamAdapter(MainActivity.moduleList)// // The adapter binds the data from 'moduleList' to the items displayed in the RecyclerView
+        recyclerView.adapter = ExamAdapter(MainActivity.SpendingDate)// // The adapter binds the data from 'moduleList' to the items displayed in the RecyclerView
     }
 }

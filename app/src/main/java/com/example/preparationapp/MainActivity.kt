@@ -48,6 +48,8 @@ class MainActivity : ComponentActivity() {
                 tmorning.text.clear()  // clear the morning textview
                 tafternoon.text.clear()  // clear the afternoon textview
                 tnotes.text.clear()  // clear the notes textview
+            } else {
+                Toast.makeText(this, "Please fill out all fields.", Toast.LENGTH_SHORT).show()
             }
         }
 
